@@ -57,18 +57,50 @@ const CodeEditor: React.FC<CodeEditorProps> = ({
   };
 
   return (
-    <div>
-      <Editor
-        height="70vh"
-        defaultLanguage="javascript"
-        value={content}
-        onChange={handleEditorChange}
-      />
-      <button onClick={handleRunCode}>Run Code</button>
-      <div>
+    // <div>
+    //   <Editor
+    //     height="70vh"
+    //     defaultLanguage="javascript"
+    //     value={content}
+    //     onChange={handleEditorChange}
+    //   />
+    //   <button onClick={handleRunCode}>Run Code</button>
+    //   <div>
+    //     <h3>Output:</h3>
+    //     <pre>{output}</pre>
+    //   </div>
+    // </div>
+    <div className="code-editor-container">
+      <div className="top-bar">
+        <span className="file-name">index.js</span>
+        <span className="language">JavaScript</span>
+        <div className="icons">{/* Add VS Code-like icons here */}</div>
+      </div>
+      <div className="editor-main">
+        <div className="sidebar">{/* Add file navigation here */}</div>
+        <div className="editor-wrapper">
+          <Editor
+            height="calc(100vh - 80px)"
+            defaultLanguage="javascript"
+            value={content}
+            onChange={handleEditorChange}
+            theme="vs-dark"
+            options={{
+              lineNumbers: "on",
+              folding: true,
+              minimap: { enabled: true },
+            }}
+          />
+        </div>
+      </div>
+      <div className="status-bar">{/* Add status information here */}</div>
+      <div className="output-panel">
         <h3>Output:</h3>
         <pre>{output}</pre>
       </div>
+      <button className="run-button" onClick={handleRunCode}>
+        Run Code
+      </button>
     </div>
   );
 };

@@ -7,13 +7,8 @@ import ProjectList from "../components/ProjectList";
 import { useAuth } from "../context/AuthContext";
 
 const Home: React.FC = () => {
-  const { token, logout } = useAuth();
-  const [isLogin, setIsLogin] = useState(true);
+  const { token, logout, isLogin } = useAuth();
   const navigate = useNavigate();
-
-  const toggleForm = () => {
-    setIsLogin(!isLogin);
-  };
 
   const handleLogout = () => {
     logout();
@@ -22,7 +17,6 @@ const Home: React.FC = () => {
 
   return (
     <div>
-      <h1>CodeCollab</h1>
       {token ? (
         <>
           <ProjectList />
@@ -30,14 +24,7 @@ const Home: React.FC = () => {
           <button onClick={handleLogout}>Logout</button>
         </>
       ) : (
-        <div>
-          {isLogin ? <Login /> : <Register />}
-          <button onClick={toggleForm}>
-            {isLogin
-              ? "Need an account? Register"
-              : "Already have an account? Login"}
-          </button>
-        </div>
+        <div>{isLogin ? <Login /> : <Register />}</div>
       )}
     </div>
   );

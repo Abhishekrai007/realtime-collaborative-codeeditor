@@ -15,6 +15,7 @@ export const AuthProvider: React.FC = ({ children }) => {
     console.log("Initial token from localStorage:", storedToken);
     return storedToken;
   });
+  const [isLogin, setIsLogin] = useState<boolean>(true);
 
   const login = (newToken: string) => {
     console.log("Setting new token:", newToken);
@@ -26,9 +27,14 @@ export const AuthProvider: React.FC = ({ children }) => {
     setToken(null);
     localStorage.removeItem("token");
   };
+  const toggleForm = () => {
+    setIsLogin(!isLogin);
+  };
 
   return (
-    <AuthContext.Provider value={{ token, login, logout }}>
+    <AuthContext.Provider
+      value={{ token, login, logout, isLogin, toggleForm, setIsLogin }}
+    >
       {children}
     </AuthContext.Provider>
   );

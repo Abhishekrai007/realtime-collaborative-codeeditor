@@ -31,20 +31,24 @@ const ProjectList: React.FC = () => {
   }, [token]);
 
   return (
-    <div>
-      <h2>Available Projects</h2>
-      {projects.length === 0 ? (
-        <p>No projects available. Create a new one!</p>
-      ) : (
-        <ul>
-          {projects.map((project) => (
-            <li key={project._id}>
-              <Link to={`/project/${project._id}`}>{project.name}</Link>
-              <p>{project.description}</p>
-            </li>
-          ))}
-        </ul>
-      )}
+    <div className="projectlist-container">
+      <div className="list-heading">
+        <h2>Available Projects</h2>
+      </div>
+      <div className="lists">
+        {projects.length === 0 ? (
+          <p>No projects available. Create a new one!</p>
+        ) : (
+          <div className="list">
+            {projects.map((project) => (
+              <li key={project._id}>
+                <Link to={`/project/${project._id}`}>{project.name}</Link>
+                <p>{project.description}</p>
+              </li>
+            ))}
+          </div>
+        )}
+      </div>
     </div>
   );
 };
