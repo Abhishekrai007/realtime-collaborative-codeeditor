@@ -86,17 +86,13 @@ const ProjectPage: React.FC = () => {
   }
 
   return (
-    <div>
+    <div className="projectpage-container">
       <h2>{project.name}</h2>
       <CodeEditor
         projectId={project._id}
         socket={socket}
         initialContent={project.content}
         initialLanguage={project.language}
-      />
-      <AddCollaborator
-        projectId={project._id}
-        onCollaboratorAdded={fetchProject}
       />
     </div>
   );

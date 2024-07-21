@@ -19,8 +19,8 @@ body {
   );
 }
 body {
-  /* overflow: hidden; */
-  height: 100vh;
+  overflow: hidden;
+  /* height: 100vh; */
 }
 
 .home-container {
@@ -235,4 +235,64 @@ textarea {
   margin-bottom: 4px;
   padding: 4px;
   cursor: pointer;
+}
+
+.projectpage-container h2 {
+  color: white;
+  text-transform: capitalize;
+  padding: 0 5rem;
+  font-size: 23px;
+  font-weight: 500;
+  margin: 2px 0;
+}
+
+.code-editor-container {
+  padding: 0 10px;
+}
+
+.code-editor-container .top-bar {
+  padding: 0 72px;
+  display: flex;
+  gap: 2rem;
+  /* margin-bottom: 1.2rem; */
+}
+
+.code-editor-container span {
+  color: white;
+}
+
+.code-editor-container select {
+  width: 16%;
+  background: black;
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.code-editor-container h3 {
+  color: white;
+}
+
+.editor-main {
+  display: flex;
+}
+
+.output-panel {
+  border-left: 3px solid white;
+  display: flex;
+  flex-direction: column;
+}
+
+.output-panel .output-container {
+  margin: 0px 10px 20px 10px;
+  border: 1px solid gray;
+}
+.output-panel .output-container h3 {
+  margin: 1px 0;
+  font-size: 23px;
+  font-weight: 400;
+}
+
+.output-panel .addcollaborator-container {
+  margin: 0 10px;
 }
