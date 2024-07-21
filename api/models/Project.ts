@@ -18,7 +18,7 @@ const ProjectSchema: Schema = new Schema({
   owner: { type: Schema.Types.ObjectId, ref: "User", required: true },
   collaborators: [{ type: Schema.Types.ObjectId, ref: "User" }],
   content: { type: String, default: "" },
-  language: { type: String, required: true },
+  language: { type: String, default: "javascript" },
   createdAt: { type: Date, default: Date.now },
   updatedAt: { type: Date, default: Date.now },
 });

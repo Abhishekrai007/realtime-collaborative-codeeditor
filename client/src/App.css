@@ -10,23 +10,28 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Poppins", sans-serif;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    158deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(5, 43, 57, 1) 65%,
+    rgba(4, 30, 36, 0.44870448179271705) 100%
+  );
+}
+body {
+  /* overflow: hidden; */
+  height: 100vh;
 }
 
 .home-container {
-  background: rgb(2, 0, 36);
-  background: linear-gradient(
-    0deg,
-    rgba(2, 0, 36, 1) 0%,
-    rgba(15, 92, 120, 0.2274159663865546) 13%,
-    rgba(17, 156, 184, 0.44870448179271705) 100%
-  );
-  height: 100vh;
+  /* height: 100vh; */
   overflow: hidden;
   padding: 0 5rem;
   display: flex;
   justify-content: center;
   align-items: center;
   /* margin-top: 6rem; */
+  overflow: auto;
 }
 
 .auth-box {
@@ -41,6 +46,11 @@ body {
   padding: 32px;
   width: 20rem;
   text-align: center;
+  margin-top: 6rem;
+}
+
+.auth-box label {
+  color: white;
 }
 
 .twitter-logo {
@@ -63,6 +73,8 @@ body {
 .navbar-container {
   background-color: black;
   padding: 10px 5rem;
+  display: flex;
+  justify-content: space-between;
   /* border-radius: 0px 0px 33px 33px; */
   background: rgb(2, 0, 36);
   background: linear-gradient(
@@ -71,6 +83,19 @@ body {
     rgba(9, 9, 121, 1) 70%,
     rgba(0, 212, 255, 1) 100%
   );
+  border-radius: 0 0 33px 33px;
+}
+
+.navbar-container button {
+  border: none;
+  background: #0470bd;
+  font-size: 17px;
+  font-weight: 600;
+  padding: 2px 14px;
+  border-radius: 10px 10px 15px 15px;
+  color: white;
+  height: 2.5rem;
+  cursor: pointer;
 }
 
 .input-group {
@@ -83,6 +108,14 @@ input {
   border: 2px solid #cfd9de;
   border-radius: 4px;
   font-size: 16px;
+}
+
+textarea {
+  width: 100%;
+  padding: 11px 0px 11px 10px;
+  border: 2px solid #cfd9de;
+  border-radius: 4px;
+  font-size: 14px;
 }
 
 .auth-button {
@@ -119,5 +152,87 @@ input {
 }
 
 .main {
+}
+
+/* project list */
+
+.projectlist-container {
   padding: 10px 5rem;
+  /* height: 100vh; */
+}
+
+.list-heading {
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+  color: white;
+}
+
+.list-container .lists {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  gap: 5rem;
+}
+
+.lists .list {
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    158deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(5, 43, 57, 1) 65%,
+    rgba(4, 30, 36, 0.44870448179271705) 100%
+  );
+
+  width: 300px;
+  height: 146px;
+  padding: 30px 1rem 7px 10px;
+  border: 1px solid white;
+  border-radius: 10px 10px 20px 20px;
+  position: relative;
+}
+
+.lists .list a {
+  text-decoration: underline;
+  color: white;
+  font-size: 21px;
+  text-transform: uppercase;
+}
+
+.lists .list p {
+  color: white;
+}
+
+.create-new-link {
+  background-color: #0470bd;
+  display: inline-block;
+  padding: 10px;
+  margin-bottom: 1.5rem;
+  border-radius: 10px 10px 15px 15px;
+}
+
+.create-new-link .link {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+}
+
+.edit-link {
+  position: absolute;
+  cursor: pointer;
+  bottom: 1px;
+}
+
+.lists .list button {
+  position: absolute;
+  bottom: 1px;
+  right: 14px;
+  border: 1px solid black;
+  background: transparent;
+  color: white;
+  font-size: 17px;
+  font-weight: 200;
+  margin-bottom: 4px;
+  padding: 4px;
+  cursor: pointer;
 }

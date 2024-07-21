@@ -10,18 +10,11 @@ const Home: React.FC = () => {
   const { token, logout, isLogin } = useAuth();
   const navigate = useNavigate();
 
-  const handleLogout = () => {
-    logout();
-    navigate("/");
-  };
-
   return (
     <div>
       {token ? (
         <>
           <ProjectList />
-          <Link to="/create-project">Create New Project</Link>
-          <button onClick={handleLogout}>Logout</button>
         </>
       ) : (
         <div>{isLogin ? <Login /> : <Register />}</div>

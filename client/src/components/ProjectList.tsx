@@ -30,21 +30,54 @@ const ProjectList: React.FC = () => {
     }
   }, [token]);
 
+  const fetchProjects = async () => {
+    try {
+      const response = await axios.get("http://localhost:5000/api/projects", {
+        headers: { Authorization: `Bearer ${token}` },
+      });
+      setProjects(response.data);
+    } catch (error) {
+      console.error("Error fetching projects", error);
+    }
+  };
+
+  const handleDelete = async (id: string) => {
+    try {
+      await axios.delete(`http://localhost:5000/api/projects/${id}`, {
+        headers: { Authorization: `Bearer ${token}` },
+      });
+      fetchProjects(); // Refresh the list after deletion
+    } catch (error) {
+      console.error("Error deleting project", error);
+    }
+  };
+
   return (
     <div className="projectlist-container">
       <div className="list-heading">
         <h2>Available Projects</h2>
       </div>
-      <div className="lists">
+      <div className="create-new-link">
+        <Link className="link" to="/create-project">
+          &#10144; Create New Project
+        </Link>
+      </div>
+      <div className="list-container">
         {projects.length === 0 ? (
           <p>No projects available. Create a new one!</p>
         ) : (
-          <div className="list">
+          <div className="lists">
             {projects.map((project) => (
-              <li key={project._id}>
+              <div className="list" key={project._id}>
                 <Link to={`/project/${project._id}`}>{project.name}</Link>
                 <p>{project.description}</p>
-              </li>
+                <Link className="edit-link" to={`/edit-project/${project._id}`}>
+                  Edit
+                </Link>
+                <button onClick={() => handleDelete(project._id)}>
+                  Delete
+                </button>
+              </div>
             ))}
           </div>
         )}

@@ -10,6 +10,7 @@ interface Project {
   _id: string;
   name: string;
   content: string;
+  language: string;
 }
 
 const ProjectPage: React.FC = () => {
@@ -91,6 +92,7 @@ const ProjectPage: React.FC = () => {
         projectId={project._id}
         socket={socket}
         initialContent={project.content}
+        initialLanguage={project.language}
       />
       <AddCollaborator
         projectId={project._id}

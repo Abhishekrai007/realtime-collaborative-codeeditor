@@ -21,7 +21,7 @@ const App: React.FC = () => {
       <div>
         <Navbar />
         <div className="main">
-          <Home />
+          <Outlet />
         </div>
       </div>
     );

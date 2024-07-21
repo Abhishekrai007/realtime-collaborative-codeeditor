@@ -8,10 +8,11 @@ import jwt from "jsonwebtoken";
 import { IProject } from "./models/Project";
 import authRoutes from "./routes/authRoutes";
 import projectRoutes from "./routes/projectRoutes";
-
+import bodyParser = require("body-parser");
 dotenv.config();
 
 const app = express();
+app.use(bodyParser.json());
 const server = http.createServer(app);
 const io = new SocketServer(server, {
   cors: {
