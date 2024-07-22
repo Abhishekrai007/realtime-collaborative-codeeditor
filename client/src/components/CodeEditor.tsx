@@ -39,21 +39,7 @@ const CodeEditor: React.FC<CodeEditorProps> = ({
   const [project, setProject] = useState<Project | null>(null);
   const { token } = useAuth();
 
-  const languageOptions = [
-    "javascript",
-    "typescript",
-    "python",
-    "java",
-    "c",
-    "cpp",
-    "csharp",
-    "go",
-    "ruby",
-    "php",
-    "swift",
-    "kotlin",
-    "rust",
-  ];
+  const languageOptions = ["javascript", "python", "java"];
 
   useEffect(() => {
     socket.on("code_updated", (updatedContent: string) => {

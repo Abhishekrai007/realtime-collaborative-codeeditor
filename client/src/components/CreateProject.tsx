@@ -11,21 +11,7 @@ const CreateProject: React.FC = () => {
   const { token } = useAuth();
   const navigate = useNavigate();
 
-  const languageOptions = [
-    "javascript",
-    "typescript",
-    "python",
-    "java",
-    "c",
-    "cpp",
-    "csharp",
-    "go",
-    "ruby",
-    "php",
-    "swift",
-    "kotlin",
-    "rust",
-  ];
+  const languageOptions = ["javascript", "python", "java"];
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();

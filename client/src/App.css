@@ -20,7 +20,7 @@ body {
 }
 body {
   overflow: hidden;
-  /* height: 100vh; */
+  height: 100vh;
 }
 
 .home-container {
@@ -53,11 +53,15 @@ body {
   color: white;
 }
 
-.twitter-logo {
-  width: 40px;
-  height: 40px;
-  margin-bottom: 16px;
-  fill: #1da1f2;
+.auth-box select {
+  width: 100%;
+  /* background: black; */
+  color: black;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 11px 0 11px 10px;
+  border: 2px solid white;
+  border-radius: 4px;
 }
 
 .navbar-container h1 {
@@ -68,6 +72,7 @@ body {
   flex-direction: column;
   line-height: 1;
   margin: 0;
+  cursor: pointer;
 }
 
 .navbar-container {
@@ -102,12 +107,16 @@ body {
   margin-bottom: 16px;
 }
 
-input {
+.auth-box input {
   width: 100%;
   padding: 11px 0px 11px 10px;
   border: 2px solid #cfd9de;
   border-radius: 4px;
   font-size: 16px;
+}
+
+.auth-box input::placeholder {
+  color: black;
 }
 
 textarea {
@@ -116,6 +125,11 @@ textarea {
   border: 2px solid #cfd9de;
   border-radius: 4px;
   font-size: 14px;
+}
+
+textarea::placeholder {
+  color: black;
+  font-size: 16px;
 }
 
 .auth-button {
@@ -281,11 +295,16 @@ textarea {
   border-left: 3px solid white;
   display: flex;
   flex-direction: column;
+  gap: 5%;
 }
 
 .output-panel .output-container {
   margin: 0px 10px 20px 10px;
   border: 1px solid gray;
+  border-radius: 12px;
+  overflow: scroll;
+  position: relative;
+  max-height: 393px;
 }
 .output-panel .output-container h3 {
   margin: 1px 0;
@@ -293,6 +312,50 @@ textarea {
   font-weight: 400;
 }
 
+.output-panel .output-container button {
+  width: 100%;
+  border: 2px solid white;
+  padding: 10px;
+  background-color: #01b2e9;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 12px 12px 0 0;
+  position: sticky;
+  bottom: 0;
+}
+
+.output-container pre {
+  color: white;
+  text-wrap: wrap;
+  font-size: 16px;
+  font-family: "Poppins";
+}
+
 .output-panel .addcollaborator-container {
   margin: 0 10px;
+}
+
+.addcollaborator-container input {
+  border: none;
+  background: transparent;
+  color: white;
+}
+
+.addcollaborator-container input::placeholder {
+  color: white;
+}
+
+.addcollaborator-container .bollaborator-button {
+  background-color: #0470bd;
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  border: 1px solid white;
+}
+
+.addcollaborator-container .collaborator-form {
+  display: flex;
+  border: 2px solid white;
+  border-radius: 12px 0 0 12px;
 }

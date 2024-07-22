@@ -12,21 +12,7 @@ const EditProject: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
 
-  const languageOptions = [
-    "javascript",
-    "typescript",
-    "python",
-    "java",
-    "c",
-    "cpp",
-    "csharp",
-    "go",
-    "ruby",
-    "php",
-    "swift",
-    "kotlin",
-    "rust",
-  ];
+  const languageOptions = ["javascript", "python", "java"];
 
   useEffect(() => {
     const fetchProject = async () => {

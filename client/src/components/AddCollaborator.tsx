@@ -31,7 +31,7 @@ const AddCollaborator: React.FC<AddCollaboratorProps> = ({
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="collaborator-form" onSubmit={handleSubmit}>
       <input
         type="email"
         value={email}
@@ -39,7 +39,9 @@ const AddCollaborator: React.FC<AddCollaboratorProps> = ({
         placeholder="Collaborator's email"
         required
       />
-      <button type="submit">Add Collaborator</button>
+      <button className="bollaborator-button" type="submit">
+        Add Collaborator
+      </button>
     </form>
   );
 };

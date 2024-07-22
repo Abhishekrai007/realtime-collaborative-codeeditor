@@ -12,7 +12,7 @@ const Navbar = () => {
   };
   return (
     <div className="navbar-container">
-      <h1>
+      <h1 onClick={() => navigate("/")}>
         <span>Code</span>
         <span>Collab</span>
       </h1>
