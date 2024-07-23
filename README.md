@@ -9,7 +9,7 @@ Git
 
 ### Setup
 ```
-git clone https://github.com/Abhishekrai007/shop-video-platform.git
+git@github.com:Abhishekrai007/realtime-collaborative-codeeditor.git
 cd shop-video-platform
 
 cd api
