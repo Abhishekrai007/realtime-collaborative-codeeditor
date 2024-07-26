@@ -1,5 +1,8 @@
 # MERN CodeSync - Collaborative Code Editor
 
+## Video Demonstration
+![Application Demo](code-collab.gif)
+
 ## Installation
 ### Prerequisites
 ```
